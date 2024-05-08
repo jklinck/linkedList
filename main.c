@@ -1,4 +1,5 @@
-//  gcc -o main main.c linkedList.c
+//  cd desktop/programming/linkedList; gcc -o main main.c linkedList.c
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,21 +8,19 @@
 
 int main(){
 
-	list* head = (list*)malloc(sizeof(list*));
-	if(head == NULL){
-			printf("Memory allocation for head failed.");
-			return 1;
-	}
+	add(5);
+	add(7);
+	add(9);
 
-	add(5, head);
-	add(7, head);
+	print();
 
-	printf("head->data = %d\n", head->data);
-	printf("head->next->data = %d\n", head->next->data); //  this is printing out bogus data
-
-	free(head);
+	free(list);
 	return 0;
 }
+
+
+
+
 
 
 

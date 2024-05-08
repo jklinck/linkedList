@@ -1,10 +1,18 @@
 
-typedef struct linkedList{
+struct linkedList{
 	int data;
 	struct linkedList* next;
-}list;
+};
+
+extern struct linkedList* list;
 
 
-void add(int nodeData, list* head);
+void add(int nodeData);
 
 void print();
+
+
+
+
+
+

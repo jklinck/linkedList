@@ -2,36 +2,48 @@
 #include <stdlib.h>
 #include "linkedList.h"
 
+struct linkedList *list = NULL;
 
-void add(int nodeData, list* head){
-	list* temp;
+//  ----------------------------------------------------------------------------------------------------------
 
-	if(head->data == 0){
-		head->data = nodeData;
-		head->next = NULL;
+
+void add(int nodeData){
+	struct linkedList* newNode = malloc(sizeof(struct linkedList));
+	if(newNode == NULL){
+		printf("Memory allocation for newNode from add in linkedList.c failed");
+		return;
 	}
-	else{
-		list* newNode = (list*)malloc(sizeof(list*));
-		if(newNode == NULL){
-			printf("Memory allocation for current failed.");
-			return;
-		}
+	newNode->data = nodeData;
+	newNode->next = NULL;
 
-		newNode->data = nodeData;
-		newNode->next = NULL;
-
-		head->next = newNode;
-
-		// printf("head->next->data = %d\n", head->next->data);
-		
-
-		free(newNode);
+	if(list == NULL){
+		list = newNode;
+		return;
 	}
+	struct linkedList* temp = list;
+	while(temp->next != NULL){
+		temp = temp->next;
+	}
+	temp->next = newNode;
 }
+
+//  ----------------------------------------------------------------------------------------------------------
 
 void print(){
-
+	printf("[");
+	if(list == NULL){
+		printf("List is empty.");
+	}
+	else{
+		printf("%d, ", list->data);
+		printf("%d, ", list->next->data);
+		printf("%d", list->next->next->data);
+	}
+	printf("]\n");
 }
+
+//  ----------------------------------------------------------------------------------------------------------
+
 
 
 
