@@ -72,8 +72,24 @@ void count(){
 //  ----------------------------------------------------------------------------------------------------------
 
 void clear(){
-	
+	struct linkedList* current = list;
+	struct linkedList* temp;
+
+	while(current != NULL){
+		temp = current->next;
+		free(current);
+		current = temp;
+	}
 }
+
+//  ----------------------------------------------------------------------------------------------------------
+
+void removeNode(){
+
+}
+
+
+
 
 
 

@@ -14,8 +14,11 @@ int main(){
 	add(11);
 	add(13);
 
+	printf("\n");
 	print();
 	count();
+	printf("\n");
+	clear();
 
 	return 0;
 }

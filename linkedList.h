@@ -15,6 +15,9 @@ void print();
 // count how many nodes are list
 void count();
 
+// removes a node from the list
+void removeNode();
+
 // traverses through list and performs free() function to free up allocated heap memory
 void clear();
 
