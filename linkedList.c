@@ -30,19 +30,63 @@ void add(int nodeData){
 //  ----------------------------------------------------------------------------------------------------------
 
 void print(){
-	printf("[");
 	if(list == NULL){
 		printf("List is empty.");
+		return;
 	}
-	else{
-		printf("%d, ", list->data);
-		printf("%d, ", list->next->data);
-		printf("%d", list->next->next->data);
+
+	printf("[");
+	struct linkedList* temp = list;
+	
+	while(temp != NULL){
+		if(temp->next == NULL){
+			printf("%d]\n", temp->data);
+			return;
+		}
+		else{
+			printf("%d, ", temp->data);
+			temp = temp->next;
+		}	
+
 	}
+	
 	printf("]\n");
 }
 
 //  ----------------------------------------------------------------------------------------------------------
+
+void count(){
+	int count = 0;
+	if(list == NULL){
+		printf("List count = %d\n", count);
+	}
+	struct linkedList* temp = list;
+	count++;
+	while(temp->next != NULL){
+		count++;
+		temp = temp->next;
+	}
+	printf("List count = %d\n", count);
+}
+
+//  ----------------------------------------------------------------------------------------------------------
+
+void clear(){
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

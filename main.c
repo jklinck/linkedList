@@ -11,10 +11,12 @@ int main(){
 	add(5);
 	add(7);
 	add(9);
+	add(11);
+	add(13);
 
 	print();
+	count();
 
-	free(list);
 	return 0;
 }
 
