@@ -1,8 +1,7 @@
-//  cd desktop/programming/linkedList; gcc -o main main.c linkedList.c
+//  gcc -o main main.c linkedList.c
 
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "linkedList.h"
 
 
@@ -17,19 +16,13 @@ int main(){
 	printf("\n");
 	print();
 	count();
+	removeNode(9);
+	print();
+	count();
 	printf("\n");
-	clear();
 
+
+	clear();
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
 

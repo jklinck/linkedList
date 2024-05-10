@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "linkedList.h"
 
-struct linkedList *list = NULL;
+struct linkedList* list = NULL;
 
 //  ----------------------------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ struct linkedList *list = NULL;
 void add(int nodeData){
 	struct linkedList* newNode = malloc(sizeof(struct linkedList));
 	if(newNode == NULL){
-		printf("Memory allocation for newNode from add in linkedList.c failed");
+		printf("Memory allocation failed");
 		return;
 	}
 	newNode->data = nodeData;
@@ -31,7 +31,7 @@ void add(int nodeData){
 
 void print(){
 	if(list == NULL){
-		printf("List is empty.");
+		printf("List is empty.\n");
 		return;
 	}
 
@@ -59,9 +59,11 @@ void count(){
 	int count = 0;
 	if(list == NULL){
 		printf("List count = %d\n", count);
+		return;
 	}
 	struct linkedList* temp = list;
-	count++;
+	count++;  // this counts the head
+	
 	while(temp->next != NULL){
 		count++;
 		temp = temp->next;
@@ -84,9 +86,35 @@ void clear(){
 
 //  ----------------------------------------------------------------------------------------------------------
 
-void removeNode(){
+void removeNode(int nodeData){
+	struct linkedList* temp = list;
+	struct linkedList* prev = list;  // hold onto previous node so it can point to removedNode->next
 
+	if(list->data == nodeData){
+		list = list->next;
+		free(temp);
+		return;
+	}
+
+	// /*
+	// code above properly deletes the head node,
+	// code below still needs to be completed
+
+	// */
+
+	while(temp->data != nodeData){
+		prev = temp;
+		temp = temp->next;
+	}
+
+	if(temp->data == nodeData){
+		prev->next = temp->next;
+		free(temp);
+		return;
+	}
 }
+
+//  ----------------------------------------------------------------------------------------------------------
 
 
 
