@@ -88,19 +88,13 @@ void clear(){
 
 void removeNode(int nodeData){
 	struct linkedList* temp = list;
-	struct linkedList* prev = list;  // hold onto previous node so it can point to removedNode->next
+	struct linkedList* prev = list;  
 
 	if(list->data == nodeData){
 		list = list->next;
 		free(temp);
 		return;
 	}
-
-	// /*
-	// code above properly deletes the head node,
-	// code below still needs to be completed
-
-	// */
 
 	while(temp->data != nodeData){
 		prev = temp;
