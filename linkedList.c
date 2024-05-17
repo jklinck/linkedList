@@ -49,8 +49,6 @@ void print(){
 		}	
 
 	}
-	
-	printf("]\n");
 }
 
 //  ----------------------------------------------------------------------------------------------------------
@@ -96,7 +94,7 @@ void removeNode(int nodeData){
 		return;
 	}
 
-	while(temp->data != nodeData){
+	while(temp->data != nodeData && temp->next != NULL){
 		prev = temp;
 		temp = temp->next;
 	}
@@ -106,25 +104,21 @@ void removeNode(int nodeData){
 		free(temp);
 		return;
 	}
+
+	if(temp->next == NULL){
+		printf("The node you entered was not found in this list.\n");
+	}
+
 }
 
 //  ----------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// inserts a new head into the list and makes the current head the second node
+void insertNewHead(int nodeData){
+	// struct linkedList* newNode = malloc(sizeof(struct linkedList));
+	// newNode->data = nodeData;
+	// newNode-next = list;
+}
 
 
 

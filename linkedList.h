@@ -27,16 +27,14 @@ void clear();
 
 //                INCOMPLETE FUNCTIONS
 
-
-
 // removes a node from the list
 void removeNode(int nodeData);
 
-// inserts a node into a specific spot between two other existing nodes
-void insert(int nodeData);
-
 // inserts a new head into the list and makes the current head the second node
 void insertNewHead(int nodeData);
+
+// inserts a node into a specific spot between two other existing nodes
+void insert(int nodeData);
 
 // reverses the linked list
 void reverse();

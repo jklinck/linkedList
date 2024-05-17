@@ -16,7 +16,7 @@ int main(){
 	printf("\n");
 	print();
 	count();
-	removeNode(9);
+	removeNode(15);
 	print();
 	count();
 	printf("\n");
