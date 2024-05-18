@@ -122,6 +122,26 @@ void insertNewHead(int nodeData){
 	list = newNode;
 }
 
+//  ----------------------------------------------------------------------------------------------------------
+
+// inserts a node into a specific spot between two other existing nodes
+void insert(int nodeData){
+	struct linkedList* newNode = malloc(sizeof(struct linkedList));
+	newNode->data = nodeData;
+	newNode->next = NULL;
+
+	struct linkedList* prev = list;
+	struct linkedList* current = list;
+
+	while(current->data < nodeData){    
+		prev = current; 
+		current = current->next; 
+	}
+
+	prev->next = newNode;
+	newNode->next = current;
+}
+
 
 
 

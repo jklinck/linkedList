@@ -16,8 +16,9 @@ int main(){
 	printf("\n");
 	print();
 	count();
-	//removeNode(15);
-	insertNewHead(3);
+	// removeNode(15);
+	// insertNewHead(3);
+	insert(8);
 	print();
 	count();
 	printf("\n");
