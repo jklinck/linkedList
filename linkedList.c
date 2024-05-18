@@ -115,10 +115,23 @@ void removeNode(int nodeData){
 
 // inserts a new head into the list and makes the current head the second node
 void insertNewHead(int nodeData){
-	// struct linkedList* newNode = malloc(sizeof(struct linkedList));
-	// newNode->data = nodeData;
-	// newNode-next = list;
+	struct linkedList* newNode = malloc(sizeof(struct linkedList));
+	newNode->data = nodeData;
+	newNode->next = list;
+
+	list = newNode;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
